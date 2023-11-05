@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Air Jordan 1",
+    "brand": "Nike",
+    "color": "Black/Red",
+    "description": "Classic high-top basketball shoes with iconic colorway.",
+    "material": "Leather",
+    "technologies": "Air Cushioning",
+    "sizing_recommendations": "True to size",
+    "img_URL": "https://tinyurl.com/abc123"
+  },
+  {
+    "name": "Adidas Ultraboost",
+    "brand": "Adidas",
+    "color": "White/Black",
+    "description": "Popular running shoes known for comfort and style.",
+    "material": "Primeknit",
+    "technologies": "Boost Cushioning",
+    "sizing_recommendations": "Half size up",
+    "img_URL": "https://tinyurl.com/xyz789"
+  },
+  {
+    "name": "Converse Chuck Taylor",
+    "brand": "Converse",
+    "color": "Navy Blue",
+    "description": "Timeless and versatile canvas sneakers.",
+    "material": "Canvas",
+    "technologies": "None",
+    "sizing_recommendations": "True to size",
+    "img_URL": "https://tinyurl.com/def456"
+  },
+  {
+    "name": "New Balance 990",
+    "brand": "New Balance",
+    "color": "Gray",
+    "description": "Comfortable and supportive athletic shoes.",
+    "material": "Suede/Mesh",
+    "technologies": "ENCAP",
+    "sizing_recommendations": "True to size",
+    "img_URL": "https://tinyurl.com/mno789"
+  }
+]
