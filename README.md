@@ -62,7 +62,7 @@ API endpoint to reset the database to its initial state.
 
 ## Frontend Features
 
-### View Uploaded Shoes
+### View Uploaded Shoes ✅
 
 While on the dashboard, the user can view cards of the shoes already uploaded to the database
 
