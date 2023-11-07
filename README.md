@@ -62,6 +62,12 @@ API endpoint to reset the database to its initial state.
 
 ## Frontend Features
 
+### View Uploaded Shoes
+
+While on the dashboard, the user can view cards of the shoes already uploaded to the database
+
+<img src='./client/public/gif-kapture-1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 ### Uploading a Shoe
 
 The user should be able to fill out a form to upload a new 'Shoe' to add to their collection
