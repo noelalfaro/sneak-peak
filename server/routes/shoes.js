@@ -6,4 +6,7 @@ const router = express.Router();
 
 router.get("/", ShoesController.getShoes);
 
+router.post("/", ShoesController.createShoe);
+
+
 export default router;
