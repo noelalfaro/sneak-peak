@@ -68,15 +68,15 @@ While on the dashboard, the user can view cards of the shoes already uploaded to
 
 <img src='./client/public/gif-kapture-1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-### Uploading a Shoe
+### Uploading a Shoe ✅
 
 The user should be able to fill out a form to upload a new 'Shoe' to add to their collection
-[gif goes here]
+<img src='./client/public/gif-kapture-2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-### Redirection
+### Redirection ✅
 
 After creating a Shoe, users are navigated to the Sneak-Peak gallery.
-[gif goes here]
+<img src='./client/public/gif-kapture-2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### User Interactions
 
@@ -88,10 +88,10 @@ Users can upvote/downvote shoes in the highlight gallery.
 The user should be able to 'Highlight' a shoe so that their shoe can be added to the highlighted dashboard on the homepage
 [gif goes here]
 
-### User can Edit/Delete shoe from their collection
+### User can Edit/Delete shoe from their collection ✅
 
-Logged in Users edit or delete shoes listed in their collection
-[gif goes here]
+Users can edit or delete shoes listed in their collection
+<img src='./client/public/gif-kapture-3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### Dynamic Routing
 

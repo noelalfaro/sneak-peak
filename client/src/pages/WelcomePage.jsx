@@ -1,36 +1,43 @@
-import  { useEffect, useState } from "react";
-import ShoeCard from "../components/ShoeCard";
-import PlusCard from "../components/PlusCard";
+import ShoeCard from '../components/ShoeCard';
+import PlusCard from '../components/PlusCard';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-function WelcomePage() {
-  const [shoes, setShoes] = useState([]);
-   useEffect(() => {
-    const fetchShoes = async () => {
-      const response = await fetch("/api/shoes");
-      const data = await response.json();
-      setShoes(data);
-    };
-    fetchShoes();
-  }, []);
+function WelcomePage({ shoes }) {
+	return (
+		<>
+			<div className="w-full flex flex-col items-start p-4 lg:flex-row lg:justify-between">
+				<Link
+					to={'/'}
+					className="text-current hover:text-current"
+				>
+					<h1 className="text-4xl font-bold text-center py-4">Sneak-Peak 👟</h1>
+				</Link>
+				<Link
+					to={'/add'}
+					className="text-current hover:text-current"
+				>
+					<PlusCard />
+				</Link>
+			</div>
 
-  return (
-    <div>
-      <div className="">
-        <h1 className="text-4xl font-bold text-center py-4">Sneak-Peak 👟</h1>
-        <div className="text-xl text-center py-2">
-          By Noel Alfaro & Mohamed Falhi
-        </div>
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {shoes.map((shoe, index) => (
-              <ShoeCard key={index} shoe={shoe} />
-            ))}
-            <PlusCard></PlusCard>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+			<div className="w-full mx-auto py-4">
+				<div className="flex flex-wrap">
+					{shoes.map((shoe, index) => (
+						<div
+							key={index}
+							className="w-full md:w-1/2 lg:w-1/3 p-4"
+						>
+							<ShoeCard
+								shoe={shoe}
+								key={index}
+							/>
+						</div>
+					))}
+				</div>
+			</div>
+		</>
+	);
 }
 
 export default WelcomePage;
