@@ -1,9 +1,27 @@
 import ShoeCard from '../components/ShoeCard';
 import PlusCard from '../components/PlusCard';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import GithubLogin from '../components/GithubLogin';
 
 function WelcomePage({ shoes }) {
+ 
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+     fetch('http://localhost:3001/auth/login/success')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success && data.user) {
+          setUser(data.user);
+          console.log(data.user);
+        }
+      })
+      .catch(err => console.log(err));
+  }, []);
+
+
 	return (
 		<>
 			<div className="w-full flex flex-col items-start p-4 lg:flex-row lg:justify-between">
@@ -36,6 +54,9 @@ function WelcomePage({ shoes }) {
 					))}
 				</div>
 			</div>
+
+        <GithubLogin />
+
 		</>
 	);
 }
