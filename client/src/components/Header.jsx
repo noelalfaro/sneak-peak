@@ -24,12 +24,7 @@ const Header = ({ user }) => {
 					<PlusCard />
 				</Link>
 
-				<Link
-					to={"/my-profile"}
-					className="text-current hover:text-current"
-				>
-					<ProfileCard user={user} />
-				</Link>
+				<ProfileCard user={user} />
 
 				<GithubLogout />
 			</div>
