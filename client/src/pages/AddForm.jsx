@@ -1,17 +1,18 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import PlusCard from '../components/PlusCard';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import PlusCard from "../components/PlusCard";
+import Header from "../components/header";
 
-const AddShoeForm = () => {
+const AddShoeForm = ({ user }) => {
 	const [shoe, setShoe] = useState({
-		name: '',
-		brand: '',
-		color: '',
-		description: '',
-		material: '',
-		technologies: '',
-		sizing_recommendations: '',
-		img_URL: '',
+		name: "",
+		brand: "",
+		color: "",
+		description: "",
+		material: "",
+		technologies: "",
+		sizing_recommendations: "",
+		img_URL: "",
 	});
 
 	const [formSuccess, setFormSuccess] = useState(true);
@@ -26,37 +27,37 @@ const AddShoeForm = () => {
 
 		try {
 			const options = {
-				method: 'POST',
+				method: "POST",
 				headers: {
-					'Content-Type': 'application/json',
+					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(shoe),
 			};
 
-			const response = await fetch('/api/shoes', options);
+			const response = await fetch("/api/shoes", options);
 
 			if (response.ok) {
 				const addedShoe = await response.json();
-				console.log('Shoe added successfully:', addedShoe);
+				console.log("Shoe added successfully:", addedShoe);
 
 				// Clear the form after submission
 				setShoe({
-					name: '',
-					brand: '',
-					color: '',
-					description: '',
-					material: '',
-					technologies: '',
-					sizing_recommendations: '',
-					img_URL: '',
+					name: "",
+					brand: "",
+					color: "",
+					description: "",
+					material: "",
+					technologies: "",
+					sizing_recommendations: "",
+					img_URL: "",
 				});
 
-				window.location.href = '/';
+				window.location.href = "/";
 			} else {
-				throw new Error('Failed to add the shoe');
+				throw new Error("Failed to add the shoe");
 			}
 		} catch (error) {
-			console.error('Error adding the shoe:', error);
+			console.error("Error adding the shoe:", error);
 			setFormSuccess(false);
 			// Here you would handle the error, maybe setting an error state or displaying a message to the user
 		}
@@ -65,21 +66,7 @@ const AddShoeForm = () => {
 	return (
 		<>
 			{/* <div className="container flex flex-col items-center  lg:flex-row justify-between text-center "> */}
-			<div className="w-full flex flex-col items-start p-4 lg:flex-row lg:justify-between">
-				<Link
-					to={'/'}
-					className="text-current hover:text-current"
-				>
-					<h1 className="text-4xl font-bold text-center py-4">Sneak-Peak 👟</h1>
-				</Link>
-
-				<Link
-					to={'/add'}
-					className="text-current hover:text-current"
-				>
-					<PlusCard />
-				</Link>
-			</div>
+			<Header user={user} />
 			<form
 				className="w-96 flex lg:mx-auto flex-col gap-4 p-4"
 				onSubmit={handleSubmit}

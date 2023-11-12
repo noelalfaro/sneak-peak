@@ -1,30 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PlusCard from '../components/PlusCard';
+import React from "react";
+import { Link } from "react-router-dom";
+import Header from "../components/header";
 
-const PageNotFound = () => {
+const PageNotFound = ({ user }) => {
 	return (
 		<>
-			<div className="w-full flex flex-col items-start p-4 lg:flex-row lg:justify-between">
-				<Link
-					to={'/'}
-					className="text-current hover:text-current"
-				>
-					<h1 className="text-4xl font-bold text-center py-4">Sneak-Peak 👟</h1>
-				</Link>
-
-				<Link
-					to={'/add'}
-					className="text-current hover:text-current"
-				>
-					<PlusCard />
-				</Link>
-			</div>
+			<Header user={user} />
 			<div className="flex flex-col mt-20 w-full place-content-center items-center">
 				<h1 className="font-bold place-content-center">Page not found. 😕</h1>
 
 				<Link
-					to={'/'}
+					to={"/welcome"}
 					className="text-current hover:text-current"
 				>
 					<button className="w-fit m-4">Go Back Home</button>

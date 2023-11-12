@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import PlusCard from '../components/PlusCard';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import Header from "../components/header";
 
-const EditShoePage = () => {
+const EditShoePage = ({ user }) => {
 	const { id } = useParams();
 	const [shoe, setShoe] = useState({
-		name: '',
-		brand: '',
-		color: '',
-		description: '',
-		material: '',
-		technologies: '',
-		sizing_recommendations: '',
-		img_URL: '',
+		name: "",
+		brand: "",
+		color: "",
+		description: "",
+		material: "",
+		technologies: "",
+		sizing_recommendations: "",
+		img_url: "",
 	});
 	useEffect(() => {
 		const fetchShoe = async () => {
@@ -22,10 +21,8 @@ const EditShoePage = () => {
 			if (result.ok) {
 				const data = await result.json();
 				setShoe(data);
-
-				// console.log(data);
 			} else {
-				throw new Error('Failed to fetch shoe data');
+				throw new Error("Failed to fetch shoe data");
 			}
 		};
 
@@ -45,9 +42,9 @@ const EditShoePage = () => {
 
 		try {
 			const options = {
-				method: 'PATCH',
+				method: "PATCH",
 				headers: {
-					'Content-Type': 'application/json',
+					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(shoe),
 			};
@@ -56,14 +53,14 @@ const EditShoePage = () => {
 			const response = await fetch(`/api/shoes/edit/${id}`, options);
 
 			if (response.ok) {
-				console.log('Shoe updated successfully');
-				window.location.href = '/';
+				console.log("Shoe updated successfully");
+				window.location.href = "/";
 				// Handle success, maybe redirect or show a success message
 			} else {
-				throw new Error('Failed to update the shoe');
+				throw new Error("Failed to update the shoe");
 			}
 		} catch (error) {
-			console.error('Error updating the shoe:', error);
+			console.error("Error updating the shoe:", error);
 			// Handle the error, maybe set an error state or display an error message to the user
 		}
 	};
@@ -71,46 +68,32 @@ const EditShoePage = () => {
 	const deleteShoe = async () => {
 		try {
 			const options = {
-				method: 'DELETE',
+				method: "DELETE",
 			};
 
 			const response = await fetch(`/api/shoes/edit/${id}`, options);
 
 			if (response.ok) {
-				console.log('Shoe deleted successfully');
-				window.location.href = '/';
+				console.log("Shoe deleted successfully");
+				window.location.href = "/";
 			} else {
-				throw new Error('Failed to delete the shoe');
+				throw new Error("Failed to delete the shoe");
 			}
 		} catch (error) {
-			console.error('Error deleting the shoe:', error);
+			console.error("Error deleting the shoe:", error);
 		}
 	};
 
 	return (
 		<>
-			<div className="w-full flex flex-col items-start p-4 lg:flex-row lg:justify-between">
-				<Link
-					to={'/'}
-					className="text-current hover:text-current"
-				>
-					<h1 className="text-4xl font-bold text-center py-4">Sneak-Peak 👟</h1>
-				</Link>
-
-				<Link
-					to={'/add'}
-					className="text-current hover:text-current"
-				>
-					<PlusCard />
-				</Link>
-			</div>
+			<Header user={user} />
 			<form className="w-96 flex items-start  flex-col gap-4 p-4">
 				<label className="mb-1">Name</label>
 				<input
 					type="text"
 					name="name"
 					id="name"
-					value={shoe.name || ''}
+					value={shoe.name || ""}
 					onChange={handleChange}
 					className="border rounded-lg p-2"
 				/>
@@ -120,7 +103,7 @@ const EditShoePage = () => {
 					type="text"
 					name="brand"
 					id="brand"
-					value={shoe.brand || ''}
+					value={shoe.brand || ""}
 					onChange={handleChange}
 					className="border rounded-lg p-2"
 				/>
@@ -130,7 +113,7 @@ const EditShoePage = () => {
 					type="text"
 					name="color"
 					id="color"
-					value={shoe.color || ''}
+					value={shoe.color || ""}
 					onChange={handleChange}
 					className="border rounded-lg p-2"
 				/>
@@ -141,7 +124,7 @@ const EditShoePage = () => {
 					cols="50"
 					id="description"
 					name="description"
-					value={shoe.description || ''}
+					value={shoe.description || ""}
 					onChange={handleChange}
 					className="border rounded-lg p-2 w-full"
 				></textarea>
@@ -151,7 +134,7 @@ const EditShoePage = () => {
 					type="text"
 					name="material"
 					id="material"
-					value={shoe.material || ''}
+					value={shoe.material || ""}
 					onChange={handleChange}
 					className="border rounded-lg p-2"
 				/>
@@ -161,7 +144,7 @@ const EditShoePage = () => {
 					type="text"
 					name="technologies"
 					id="technologies"
-					value={shoe.technologies || ''}
+					value={shoe.technologies || ""}
 					onChange={handleChange}
 					className="border rounded-lg p-2"
 				/>
@@ -171,7 +154,7 @@ const EditShoePage = () => {
 					type="text"
 					name="sizing_recommendations"
 					id="sizing_recommendations"
-					value={shoe.sizing_recommendations || ''}
+					value={shoe.sizing_recommendations || ""}
 					onChange={handleChange}
 					className="border rounded-lg p-2"
 				/>
@@ -181,7 +164,7 @@ const EditShoePage = () => {
 					type="text"
 					name="img_URL"
 					id="img_URL"
-					value={shoe.img_URL || ''}
+					value={shoe.img_url || ""}
 					onChange={handleChange}
 					className="border rounded-lg p-2"
 				/>

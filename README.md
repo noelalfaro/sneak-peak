@@ -106,10 +106,10 @@ Hierarchically designed components segmented into pages and component types.
 The web app displays an error message to the user if something goes wrong.
 [gif goes here]
 
-### User log in via Github
+### User log in via Github ✅
 
 - The user can log in via Github
-  [gif goes here]
+  <img src='./client/public/gif-kapture-login.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Getting Started
 
