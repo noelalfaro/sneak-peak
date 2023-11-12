@@ -71,11 +71,13 @@ While on the dashboard, the user can view cards of the shoes already uploaded to
 ### Uploading a Shoe ✅
 
 The user should be able to fill out a form to upload a new 'Shoe' to add to their collection
+
 <img src='./client/public/gif-kapture-2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### Redirection ✅
 
 After creating a Shoe, users are navigated to the Sneak-Peak gallery.
+
 <img src='./client/public/gif-kapture-2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### User Interactions
@@ -91,6 +93,7 @@ The user should be able to 'Highlight' a shoe so that their shoe can be added to
 ### User can Edit/Delete shoe from their collection ✅
 
 Users can edit or delete shoes listed in their collection
+
 <img src='./client/public/gif-kapture-3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### Dynamic Routing
@@ -108,7 +111,8 @@ The web app displays an error message to the user if something goes wrong.
 
 ### User log in via Github ✅
 
-- The user can log in via Github
+The user can log in via Github
+
   <img src='./client/public/gif-kapture-login.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Getting Started
