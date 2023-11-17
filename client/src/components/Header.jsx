@@ -6,7 +6,7 @@ import ProfileCard from "./ProfileCard";
 
 const Header = ({ user }) => {
 	return (
-		<div className="w-full flex flex-col items-start p-4 lg:flex-row lg:justify-between">
+		<div className="w-full flex flex-col items-center p-4 lg:flex-row lg:justify-between">
 			<div className="w-full flex  justify-center lg:justify-start lg:w-1/2">
 				<Link
 					to={"/dashboard"}
@@ -16,7 +16,7 @@ const Header = ({ user }) => {
 				</Link>
 			</div>
 
-			<div className="w-full flex gap-4 justify-center lg:justify-end  lg:w-1/2">
+			<div className="w-full flex  flex-nowrap gap-4 items-center h-full place-content-center lg:justify-end  lg:w-1/2">
 				<Link
 					to={"/add"}
 					className="text-current hover:text-current"

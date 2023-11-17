@@ -35,7 +35,7 @@ Complete the checklist below detailing each baseline, custom, and stretch featur
   - [x] The ability to reset the database to its default state
 - [ ] The project includes these frontend-specific features:
   - [x] At least one redirection
-  - [ ] At least one interaction that the user can initiate and complete on the same page without navigating to a new page
+  - [x] At least one interaction that the user can initiate and complete on the same page without navigating to a new page
   - [x] Dynamic frontend routes created with React Router
   - [x] Hierarchically designed React components
     - [x] Components broken down into categories, including Page and Component types

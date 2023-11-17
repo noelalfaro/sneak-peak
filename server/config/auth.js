@@ -7,7 +7,7 @@ const options = {
 
 const verify = async (accessToken, refreshToken, profile, callback) => {
 	const {
-		_json: { id, name, login, avatar_url },
+		_json: { id, name, login, avatar_url, sneakersInLocker },
 	} = profile;
 
 	const userData = {
@@ -15,6 +15,7 @@ const verify = async (accessToken, refreshToken, profile, callback) => {
 		username: login,
 		avatarUrl: avatar_url,
 		accessToken,
+		sneakersInLocker: sneakersInLocker,
 	};
 
 	try {
@@ -29,13 +30,14 @@ const verify = async (accessToken, refreshToken, profile, callback) => {
 
 		if (!user) {
 			const results = await pool.query(
-				"INSERT INTO users (githubid , username ,  role ,  avatarurl ,accesstoken ) values( $1 , $2, $3, $4, $5 )",
+				"INSERT INTO users (githubid , username ,  role ,  avatarurl ,accesstoken, sneakersinlocker ) values( $1 , $2, $3, $4, $5, $6 )",
 				[
 					userData.githubId,
 					userData.username,
 					"newbie",
 					userData.avatarUrl,
 					userData.accessToken,
+					userData.sneakersInLocker,
 				]
 			);
 			const newUser = results.rows[0];

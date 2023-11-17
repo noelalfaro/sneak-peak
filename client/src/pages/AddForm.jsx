@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PlusCard from "../components/PlusCard";
 import Header from "../components/header";
@@ -13,8 +13,8 @@ const AddShoeForm = ({ user }) => {
 		technologies: "",
 		sizing_recommendations: "",
 		img_URL: "",
+		submitted_by: user.username,
 	});
-
 	const [formSuccess, setFormSuccess] = useState(true);
 
 	const handleChange = (e) => {
@@ -50,9 +50,11 @@ const AddShoeForm = ({ user }) => {
 					technologies: "",
 					sizing_recommendations: "",
 					img_URL: "",
+					submitted_by: user.username,
 				});
+				setFormSuccess(true);
 
-				window.location.href = "/";
+				window.location.href = "/dashboard";
 			} else {
 				throw new Error("Failed to add the shoe");
 			}

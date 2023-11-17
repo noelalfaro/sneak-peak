@@ -12,7 +12,6 @@ const Dashboard = ({ user }) => {
 			const data = await response.json();
 			setShoes(data);
 		};
-		// console.log(user);
 
 		fetchShoes();
 	}, []);
@@ -30,6 +29,7 @@ const Dashboard = ({ user }) => {
 							<ShoeCard
 								shoe={shoe}
 								key={index}
+								user={user}
 							/>
 						</div>
 					))}

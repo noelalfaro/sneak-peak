@@ -13,6 +13,7 @@ const EditShoePage = ({ user }) => {
 		technologies: "",
 		sizing_recommendations: "",
 		img_url: "",
+		submitted_by: user.username,
 	});
 	useEffect(() => {
 		const fetchShoe = async () => {
@@ -21,6 +22,7 @@ const EditShoePage = ({ user }) => {
 			if (result.ok) {
 				const data = await result.json();
 				setShoe(data);
+				console.log(data);
 			} else {
 				throw new Error("Failed to fetch shoe data");
 			}
@@ -54,7 +56,7 @@ const EditShoePage = ({ user }) => {
 
 			if (response.ok) {
 				console.log("Shoe updated successfully");
-				window.location.href = "/";
+				window.location.href = "/dashboard";
 				// Handle success, maybe redirect or show a success message
 			} else {
 				throw new Error("Failed to update the shoe");

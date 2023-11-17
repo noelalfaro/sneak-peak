@@ -5,7 +5,7 @@ const ProfileCard = ({ user }) => {
 	return (
 		<>
 			<Link
-				to={"/" + user.username}
+				to={"/user/" + user.username}
 				className="text-current hover:text-current"
 			>
 				<button

@@ -11,7 +11,7 @@ function PlusCard() {
 					src={plus_Icon}
 				/>
 			</div> */}
-			Add a shoe
+			Add Sneaker
 		</button>
 	);
 }

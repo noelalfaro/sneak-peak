@@ -4,21 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import GithubLogin from "../components/GithubLogin";
 
-function WelcomePage({ shoes }) {
-	// const [user, setUser] = useState(null);
-
-	// useEffect(() => {
-	// 	fetch("/api/auth/login/success")
-	// 		.then((res) => res.json())
-	// 		.then((data) => {
-	// 			if (data.success && data.user) {
-	// 				setUser(data.user);
-	// 				console.log(data.user);
-	// 			}
-	// 		})
-	// 		.catch((err) => console.log(err + "test"));
-	// }, []);
-
+function WelcomePage() {
 	return (
 		<>
 			<div className="w-full flex flex-col items-center p-4 lg:flex-row lg:justify-between">

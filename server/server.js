@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import shoeRoutes from "./routes/shoes.js";
+import userRoutes from "./routes/users.js";
 import session from "express-session";
 import passport from "passport";
 import { Github } from "./config/auth.js";
@@ -42,6 +43,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/shoes", shoeRoutes);
+app.use("/api/users", userRoutes);
 app.use("/auth", authRoutes);
 const PORT = process.env.PORT || 3001;
 
