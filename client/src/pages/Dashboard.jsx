@@ -2,6 +2,7 @@ import React from "react";
 import ShoeCard from "../components/ShoeCard";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
+import { data } from "autoprefixer";
 
 const Dashboard = ({ user }) => {
 	const [shoes, setShoes] = useState([]);
@@ -12,6 +13,7 @@ const Dashboard = ({ user }) => {
 			const data = await response.json();
 			setShoes(data);
 		};
+		console.log(data);
 
 		fetchShoes();
 	}, []);
