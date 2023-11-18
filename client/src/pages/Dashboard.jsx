@@ -12,6 +12,7 @@ const Dashboard = ({ user }) => {
 			const response = await fetch("/api/shoes");
 			const data = await response.json();
 			setShoes(data);
+			console.log(data);
 		};
 		// console.log(data);
 
