@@ -12,7 +12,9 @@ import ShoePage from "./pages/ShoePage";
 function App() {
 	const [user, setUser] = useState(null);
 	const API_URL =
-		process.env.NODE_ENV === "production" ? "" : "http://localhost:3001";
+		process.env.NODE_ENV === "production"
+			? "sneak-peak-server.up.railway.app"
+			: "http://localhost:3001";
 
 	useEffect(() => {
 		const getUser = async () => {

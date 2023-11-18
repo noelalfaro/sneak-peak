@@ -2,7 +2,9 @@ import React from "react";
 
 function GithubLogin() {
 	const API_URL =
-		process.env.NODE_ENV === "production" ? "" : "http://localhost:3001";
+		process.env.NODE_ENV === "production"
+			? "sneak-peak-server.up.railway.app"
+			: "http://localhost:3001";
 	const handleLogin = () => {
 		window.location.href = `${API_URL}/auth/github`;
 	};
