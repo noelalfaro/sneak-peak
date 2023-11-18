@@ -1,6 +1,6 @@
 import React from "react";
 import ShoeCard from "../components/ShoeCard";
-import { Header } from "../components/header";
+import Header from "../components/header";
 import { useState, useEffect } from "react";
 
 const Dashboard = ({ user }) => {
