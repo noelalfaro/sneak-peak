@@ -4,7 +4,7 @@ CodePath WEB103 Final Project
 
 Designed and developed by: Noel Alfaro & Mohamed Reda Falh
 
-🔗 Link to deployed app:
+🔗 Link to deployed app: https://sneak-peak-client.up.railway.app/dashboard
 
 ## Table of Contents
 
@@ -53,8 +53,8 @@ Backend: Node, Express, PostgresSQL database
 
 - **GET** `/shoes`: Fetch all shoe collections.
 - **POST** `/shoes`: Add a new shoe to a user's collection.
-- **PATCH** `/shoes/:id`: Update shoe details.
-- **DELETE** `/shoes/:id`: Remove a shoe from the collection.
+- **PATCH** `/edit/shoes/:id`: Update shoe details.
+- **DELETE** `edit/shoes/:id`: Remove a shoe from the collection.
 
 ### Database Management
 
@@ -80,34 +80,11 @@ After creating a Shoe, users are navigated to the Sneak-Peak gallery.
 
 <img src='./client/public/gif-kapture-2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-### User Interactions
-
-Users can upvote/downvote shoes in the highlight gallery.
-[gif goes here]
-
-### "Highlighting"
-
-The user should be able to 'Highlight' a shoe so that their shoe can be added to the highlighted dashboard on the homepage
-[gif goes here]
-
 ### User can Edit/Delete shoe from their collection ✅
 
 Users can edit or delete shoes listed in their collection
 
 <img src='./client/public/gif-kapture-3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-### Dynamic Routing
-
-Landing page, user profiles, individual shoe details, and Sneak-Peak Dashboard, all facilitated via React Router.
-
-### React Component Structure
-
-Hierarchically designed components segmented into pages and component types.
-
-### The Web App Gracefully Handles Errors
-
-The web app displays an error message to the user if something goes wrong.
-[gif goes here]
 
 ### User log in via Github ✅
 
@@ -121,7 +98,3 @@ The user can log in via Github
 2. Install dependencies using `npm install`.
 3. Start the server using `npm start`.
 4. Navigate to `localhost:3000` to see the app in action.
-
-## Contributing
-
-Feel free to fork the repository, make changes, and submit a pull request. We appreciate all contributions!
