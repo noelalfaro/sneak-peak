@@ -13,7 +13,7 @@ const Dashboard = ({ user }) => {
 			const data = await response.json();
 			setShoes(data);
 		};
-		console.log(data);
+		// console.log(data);
 
 		fetchShoes();
 	}, []);

@@ -8,7 +8,6 @@ export default defineConfig({
 		proxy: {
 			"/api": {
 				target: "https://sneak-peak-server.up.railway.app/api",
-				changeOrigin: true,
 			},
 		},
 	},
