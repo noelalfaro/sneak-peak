@@ -1,7 +1,8 @@
 import React from "react";
 
 function GithubLogin() {
-	const API_URL = "http://localhost:3001";
+	const API_URL =
+		process.env.NODE_ENV === "production" ? "" : "http://localhost:3001";
 	const handleLogin = () => {
 		window.location.href = `${API_URL}/auth/github`;
 	};

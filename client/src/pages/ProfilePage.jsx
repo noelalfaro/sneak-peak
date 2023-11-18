@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/header";
 import { useParams } from "react-router-dom";
 import ShoeCard from "../components/ShoeCard";
-import SneakersNotFound from "../../public/hung-sneakers.png";
+import SneakersNotFound from "../assets/hung-sneakers.png";
 
 const ProfilePage = ({ user }) => {
 	const [userShoes, setUserShoes] = useState([]);

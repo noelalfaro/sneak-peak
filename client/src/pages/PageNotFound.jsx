@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/header";
-import SneakersNotFound from "../../public/hung-sneakers.png";
+import SneakersNotFound from "../assets/hung-sneakers.png";
 
 const PageNotFound = ({ user }) => {
 	return (

@@ -11,17 +11,19 @@ import ShoePage from "./pages/ShoePage";
 
 function App() {
 	const [user, setUser] = useState(null);
+	const API_URL =
+		process.env.NODE_ENV === "production" ? "" : "http://localhost:3001";
 
 	useEffect(() => {
 		const getUser = async () => {
-			const response = await fetch(`http://localhost:3001/auth/login/success`, {
+			const response = await fetch(`${API_URL}/auth/login/success`, {
 				credentials: "include",
 			});
 			const json = await response.json();
 			setUser(json.user);
 		};
 		getUser();
-	}, []);
+	}, [API_URL]);
 
 	let element = useRoutes([
 		{
@@ -57,16 +59,6 @@ function App() {
 	return (
 		<>
 			<div className="container w-screen ">{element}</div>
-
-			{/* 
-          <Routes>
-            
-              <Route path="/" element={<WelcomePage />}></Route>
-
-              <Route path="/add" element={<AddShoeForm />}></Route>
-            
-            
-          </Routes> */}
 		</>
 	);
 }

@@ -71,9 +71,6 @@ const updateShoe = async (req, res) => {
 			submitted_by,
 		} = req.body;
 
-		console.log("Received PATCH request with id:", id);
-		console.log("Received PATCH request with data:", req.body);
-
 		const results = await pool.query(
 			`UPDATE shoes
       SET name = $1, brand = $2, color = $3, description = $4, material = $5, technologies = $6, sizing_recommendations= $7, img_url = $8, submitted_by = $9
@@ -109,11 +106,7 @@ const deleteShoe = async (req, res) => {
 };
 const getShoesByUser = async (req, res) => {
 	try {
-		// const submittedBy = req.user.username; // Assuming user information is stored in req.user
 		const submittedBy = req.params.username;
-		// console.log(req.user.username);
-		// console.log(req.username);
-		// console.log(submittedBy);
 
 		const results = await pool.query(
 			"SELECT * FROM shoes WHERE submitted_by = $1",

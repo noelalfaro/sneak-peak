@@ -35,8 +35,6 @@ const createShoesTable = async () => {
 		console.log("⚠️ error creating shoes table", error);
 	}
 };
-const { rows } = await pool.query("SELECT * FROM shoes LIMIT 1");
-console.log("Shoes Table Description:", rows);
 
 const createUsersTable = async () => {
 	const createUserTableQuery = `
