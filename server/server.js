@@ -6,6 +6,12 @@ import session from "express-session";
 import passport from "passport";
 import { Github } from "./config/auth.js";
 import authRoutes from "./routes/auth.js";
+
+const CLIENT_URL =
+	process.env.NODE_ENV === "production"
+		? "https://sneak-peak-client.up.railway.app"
+		: "http://localhost:5173";
+
 const app = express();
 
 app.use(
@@ -20,7 +26,7 @@ app.use(express.json());
 
 app.use(
 	cors({
-		origin: "http://localhost:5173",
+		origin: CLIENT_URL,
 		methods: "GET,POST,PUT,DELETE,PATCH",
 		credentials: true,
 	})
@@ -39,7 +45,7 @@ passport.deserializeUser((user, done) => {
 });
 
 app.get("/", (req, res) => {
-	res.redirect(`http://localhost:5173/dashboard`);
+	res.redirect(CLIENT_URL + "/dashboard");
 });
 
 app.use("/api/shoes", shoeRoutes);
