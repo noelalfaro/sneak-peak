@@ -13,7 +13,7 @@ function App() {
 	const [user, setUser] = useState(null);
 	const API_URL =
 		process.env.NODE_ENV === "production"
-			? "https://sneak-peak-server.up.railway.app/api"
+			? "https://sneak-peak-server.up.railway.app"
 			: "http://localhost:3001";
 
 	useEffect(() => {
