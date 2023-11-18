@@ -7,21 +7,22 @@ import { data } from "autoprefixer";
 const Dashboard = ({ user }) => {
 	const [shoes, setShoes] = useState([]);
 
+	const API_URL =
+		process.env.NODE_ENV === "production"
+			? "https://sneak-peak-server.up.railway.app"
+			: "http://localhost:3001";
+
 	useEffect(() => {
 		const fetchShoes = async () => {
-			try {
-				const response = await fetch(
-					"https://sneak-peak-server.up.railway.app/api/shoes"
-				);
-				const data = await response.json();
-				setShoes(data);
-				console.log(data);
-			} catch (error) {
-				console.log("error" + error);
-			}
+			const response = await fetch(`${API_URL}/api/shoes`);
+			const data = await response.json();
+			setShoes(data);
+			console.log(data);
+
+			console.log("error" + error);
 		};
 		fetchShoes();
-	}, []);
+	}, [API_URL]);
 
 	return (
 		<>
