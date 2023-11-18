@@ -6,7 +6,7 @@ function GithubLogin() {
 			? "https://sneak-peak-server.up.railway.app"
 			: "http://localhost:3001";
 	const handleLogin = () => {
-		window.location.href = `${API_URL}/auth/github`;
+		window.location.href = `${API_URL}/auth/github/callback`;
 	};
 
 	return <button onClick={handleLogin}>Login with GitHub</button>;
