@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PlusCard from "../components/PlusCard";
-import Header from "../components/header";
+import Header from "../components/Header";
 
 const AddShoeForm = ({ user }) => {
 	const [shoe, setShoe] = useState({
