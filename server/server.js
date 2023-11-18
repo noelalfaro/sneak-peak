@@ -32,6 +32,11 @@ app.use(
 	})
 );
 
+app.use((req, res, next) => {
+	res.setHeader("Cache-Control", "no-cache");
+	next();
+});
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(Github);
