@@ -39,6 +39,16 @@ Backend: Node, Express, PostgresSQL database
 - Dynamic routes implemented for both frontend and backend.
 - Hosted and deployed via Railway.
 
+## Gifs showcasing work done so far:
+
+### Logging in, Viewing all shoes, specific shoe, user profile, editing, and logging out
+
+<img src='./client/public/gif-kapture-5.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+### Adding & Deleting a Shoe
+
+<img src='./client/public/gif-kapture-6.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 ## Backend Features
 
 ### Database Relationships in Postgres
