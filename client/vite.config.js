@@ -7,7 +7,7 @@ export default defineConfig({
 	server: {
 		proxy: {
 			"/api": {
-				target: "https://sneak-peak-server.up.railway.app",
+				target: "https://sneak-peak-server.up.railway.app/api",
 			},
 		},
 	},
