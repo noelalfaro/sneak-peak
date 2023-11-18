@@ -57,7 +57,7 @@ const EditShoePage = ({ user }) => {
 			};
 			console.log(shoe);
 
-			const response = await fetch(`/api/shoes/edit/${id}`, options);
+			const response = await fetch(`${API_URL}/api/shoes/edit/${id}`, options);
 
 			if (response.ok) {
 				console.log("Shoe updated successfully");
@@ -78,7 +78,7 @@ const EditShoePage = ({ user }) => {
 				method: "DELETE",
 			};
 
-			const response = await fetch(`/api/shoes/edit/${id}`, options);
+			const response = await fetch(`${API_URL}/api/shoes/edit/${id}`, options);
 
 			if (response.ok) {
 				console.log("Shoe deleted successfully");
