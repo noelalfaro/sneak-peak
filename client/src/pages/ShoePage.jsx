@@ -24,7 +24,7 @@ const ShoePage = ({ user }) => {
 
 	useEffect(() => {
 		const fetchShoe = async () => {
-			const result = await fetch(`/api/shoes/${id}`);
+			const result = await fetch(`${API_URL}/api/shoes/${id}`);
 
 			if (result.ok) {
 				const data = await result.json();
@@ -46,7 +46,7 @@ const ShoePage = ({ user }) => {
 			method: "DELETE",
 		};
 
-		await fetch("/api/shoes/edit/" + id, options);
+		await fetch(`${API_URL}/api/shoes/edit/` + id, options);
 		window.location.href = "/dashboard";
 	};
 

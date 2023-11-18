@@ -17,7 +17,7 @@ const ProfilePage = ({ user }) => {
 
 	useEffect(() => {
 		const fetchUser = async () => {
-			const response = await fetch(`/api/users/${username}`);
+			const response = await fetch(`${API_URL}/api/users/${username}`);
 			if (response.ok) {
 				const user = await response.json();
 				setProfile(user);
@@ -29,7 +29,7 @@ const ProfilePage = ({ user }) => {
 		};
 
 		const fetchUserShoes = async () => {
-			const response = await fetch(`/api/shoes/user/${username}`);
+			const response = await fetch(`${API_URL}/api/shoes/user/${username}`);
 			if (response.ok) {
 				const shoes = await response.json();
 
