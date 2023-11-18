@@ -1,7 +1,10 @@
 import React from "react";
 
 const GithubLogout = () => {
-	const API_URL = "http://localhost:3001";
+	const API_URL =
+		process.env.NODE_ENV === "production"
+			? "https://sneak-peak-server.up.railway.app"
+			: "http://localhost:3001";
 
 	const logout = async () => {
 		const url = `${API_URL}/auth/logout`;
