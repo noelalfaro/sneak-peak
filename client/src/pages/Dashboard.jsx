@@ -8,14 +8,19 @@ const Dashboard = ({ user }) => {
 	const [shoes, setShoes] = useState([]);
 
 	useEffect(() => {
-		const fetchShoes = async () => {
-			const response = await fetch(
-				"https://sneak-peak-server.up.railway.app/api/shoes"
-			);
-			const data = await response.json();
-			setShoes(data);
-			console.log(data);
-		};
+		try {
+			const fetchShoes = async () => {
+				const response = await fetch(
+					"https://sneak-peak-server.up.railway.app/api/shoes"
+				);
+				const data = await response.json();
+				setShoes(data);
+				console.log(data);
+			};
+		} catch (error) {
+			console.log("error:" + error);
+		}
+
 		// console.log(data);
 
 		fetchShoes();
