@@ -17,24 +17,27 @@ const ShoePage = ({ user }) => {
 		submitted_by: user.username,
 	});
 
+	const API_URL =
+		process.env.NODE_ENV === "production"
+			? "https://sneak-peak-server.up.railway.app"
+			: "http://localhost:3001";
+
 	useEffect(() => {
 		const fetchShoe = async () => {
-			try {
-				const result = await fetch(`/api/shoes/${id}`);
+			const result = await fetch(`/api/shoes/${id}`);
 
-				if (result.ok) {
-					const data = await result.json();
-					setShoe(data);
-					// console.log(data);
-				} else {
-					throw new Error("Failed to fetch shoe data");
-				}
-			} catch (error) {
-				console.log("error" + error);
+			if (result.ok) {
+				const data = await result.json();
+				setShoe(data);
+				// console.log(data);
+			} else {
+				throw new Error("Failed to fetch shoe data");
 			}
+
+			console.log("error" + error);
 		};
 		fetchShoe();
-	}, [id]);
+	}, [id, API_URL]);
 
 	const handleDelete = async (event) => {
 		event.preventDefault();

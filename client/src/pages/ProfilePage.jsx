@@ -10,40 +10,40 @@ const ProfilePage = ({ user }) => {
 	// console.log(username);
 	const [profile, setProfile] = useState({});
 
+	const API_URL =
+		process.env.NODE_ENV === "production"
+			? "https://sneak-peak-server.up.railway.app"
+			: "http://localhost:3001";
+
 	useEffect(() => {
 		const fetchUser = async () => {
-			try {
-				const response = await fetch(`/api/users/${username}`);
-				if (response.ok) {
-					const user = await response.json();
-
-					setProfile(user);
-				} else {
-					console.error("Failed to fetch user 😭");
-				}
-			} catch (error) {
-				console.error("Error fetching user:", error);
+			const response = await fetch(`/api/users/${username}`);
+			if (response.ok) {
+				const user = await response.json();
+				setProfile(user);
+			} else {
+				console.error("Failed to fetch user 😭");
 			}
+
+			console.error("Error fetching user:", error);
 		};
 
 		const fetchUserShoes = async () => {
-			try {
-				const response = await fetch(`/api/shoes/user/${username}`);
-				if (response.ok) {
-					const shoes = await response.json();
+			const response = await fetch(`/api/shoes/user/${username}`);
+			if (response.ok) {
+				const shoes = await response.json();
 
-					setUserShoes(shoes);
-					// console.log(shoes);
-				} else {
-					console.error("Failed to fetch user shoes");
-				}
-			} catch (error) {
-				console.error("Error fetching user shoes:", error);
+				setUserShoes(shoes);
+				// console.log(shoes);
+			} else {
+				console.error("Failed to fetch user shoes");
 			}
+
+			console.error("Error fetching user shoes:", error);
 		};
 		fetchUserShoes();
 		fetchUser();
-	}, [username]);
+	}, [username, API_URL]);
 
 	return (
 		<>
