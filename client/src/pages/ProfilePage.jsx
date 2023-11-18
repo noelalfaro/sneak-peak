@@ -24,8 +24,6 @@ const ProfilePage = ({ user }) => {
 			} else {
 				console.error("Failed to fetch user 😭");
 			}
-
-			console.error("Error fetching user:", error);
 		};
 
 		const fetchUserShoes = async () => {
@@ -38,8 +36,6 @@ const ProfilePage = ({ user }) => {
 			} else {
 				console.error("Failed to fetch user shoes");
 			}
-
-			console.error("Error fetching user shoes:", error);
 		};
 		fetchUserShoes();
 		fetchUser();

@@ -33,8 +33,6 @@ const ShoePage = ({ user }) => {
 			} else {
 				throw new Error("Failed to fetch shoe data");
 			}
-
-			console.log("error" + error);
 		};
 		fetchShoe();
 	}, [id, API_URL]);
