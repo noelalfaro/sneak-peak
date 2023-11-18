@@ -18,8 +18,6 @@ const ProfilePage = ({ user }) => {
 					const user = await response.json();
 
 					setProfile(user);
-					// console.log("profile:" + profile);
-					// console.log(user);
 				} else {
 					console.error("Failed to fetch user 😭");
 				}

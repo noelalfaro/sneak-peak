@@ -19,17 +19,20 @@ const ShoePage = ({ user }) => {
 
 	useEffect(() => {
 		const fetchShoe = async () => {
-			const result = await fetch(`/api/shoes/${id}`);
+			try {
+				const result = await fetch(`/api/shoes/${id}`);
 
-			if (result.ok) {
-				const data = await result.json();
-				setShoe(data);
-				// console.log(data);
-			} else {
-				throw new Error("Failed to fetch shoe data");
+				if (result.ok) {
+					const data = await result.json();
+					setShoe(data);
+					// console.log(data);
+				} else {
+					throw new Error("Failed to fetch shoe data");
+				}
+			} catch (error) {
+				console.log("error" + error);
 			}
 		};
-
 		fetchShoe();
 	}, [id]);
 
