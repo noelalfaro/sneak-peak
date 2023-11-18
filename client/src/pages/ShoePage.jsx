@@ -54,7 +54,7 @@ const ShoePage = ({ user }) => {
 			<div className="w-full flex flex-col place-content-center justify-start text-center p-6 gap-4">
 				{/* Display all shoe properties */}
 				<h2 className="text-2xl font-bold mb-2">{shoe.name}</h2>
-				<div className="mt-6 flex place-content-center justify-center items-center gap-4">
+				<div className="mt-6 flex flex-col lg:flex-row place-content-center justify-center items-center gap-4">
 					<img
 						className="w-1/3 rounded-md"
 						src={shoe.img_url}

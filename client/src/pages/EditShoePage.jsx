@@ -15,9 +15,14 @@ const EditShoePage = ({ user }) => {
 		img_url: "",
 		submitted_by: user.username,
 	});
+
+	const API_URL =
+		process.env.NODE_ENV === "production"
+			? "https://sneak-peak-server.up.railway.app"
+			: "http://localhost:3001";
 	useEffect(() => {
 		const fetchShoe = async () => {
-			const result = await fetch(`/api/shoes/edit/${id}`);
+			const result = await fetch(`${API_URL}/api/shoes/edit/${id}`);
 
 			if (result.ok) {
 				const data = await result.json();
@@ -29,7 +34,7 @@ const EditShoePage = ({ user }) => {
 		};
 
 		fetchShoe();
-	}, [id]);
+	}, [id, API_URL]);
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
