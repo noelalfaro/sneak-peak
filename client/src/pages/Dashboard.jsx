@@ -9,7 +9,9 @@ const Dashboard = ({ user }) => {
 
 	useEffect(() => {
 		const fetchShoes = async () => {
-			const response = await fetch("/api/shoes");
+			const response = await fetch(
+				"https://sneak-peak-server.up.railway.app/api/shoes"
+			);
 			const data = await response.json();
 			setShoes(data);
 			console.log(data);
