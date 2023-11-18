@@ -16,6 +16,8 @@ const EditShoePage = ({ user }) => {
 		submitted_by: user.username,
 	});
 
+	const [formSuccess, setFormSuccess] = useState(true);
+
 	const API_URL =
 		process.env.NODE_ENV === "production"
 			? "https://sneak-peak-server.up.railway.app"
@@ -63,8 +65,10 @@ const EditShoePage = ({ user }) => {
 			if (response.ok) {
 				console.log("Shoe updated successfully");
 				window.location.href = "/dashboard";
+				setFormSuccess(true);
 				// Handle success, maybe redirect or show a success message
 			} else {
+				setFormSuccess(false);
 				throw new Error("Failed to update the shoe");
 			}
 		} catch (error) {
@@ -176,6 +180,13 @@ const EditShoePage = ({ user }) => {
 					onChange={handleChange}
 					className="border rounded-lg p-2"
 				/>
+				{!formSuccess && (
+					<div className="p-4  border-red-600 rounded-lg border-2">
+						<p className="text-red-600 font-bold">
+							There was a problem submitting this shoe, try again.
+						</p>
+					</div>
+				)}
 
 				<button
 					type="submit"

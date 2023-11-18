@@ -41,7 +41,7 @@ Complete the checklist below detailing each baseline, custom, and stretch featur
     - [x] Components broken down into categories, including Page and Component types
     - [x] Corresponding container components and presenter components as appropriate
 - [x] The project includes dynamic routes for both frontend and backend apps
-- [ ] The project is deployed on Railway with all pages and features working
+- [x] The project is deployed on Railway with all pages and features working
 
 ### Custom Features
 
@@ -62,7 +62,7 @@ Complete the checklist below detailing each baseline, custom, and stretch featur
 
 - [ ] A subset of pages require the user to log in before accessing the content
   - [x] Users can log in and log out via GitHub OAuth with Passport.js
-- [ ] Restrict available user options dynamically, such as restricting available purchases based on a user's currency
+- [x] Restrict available user options dynamically, such as restricting available purchases based on a user's currency
 - [ ] Show a spinner while a page or page element is loading
 - [ ] Disable buttons and inputs during the form submission process
 - [ ] Disable buttons after they have been clicked
@@ -71,7 +71,13 @@ Complete the checklist below detailing each baseline, custom, and stretch featur
 
 ## Final Demo GIF
 
-🔗 [Here's a GIF walkthrough of the final project](👉🏾👉🏾👉🏾 your link here)
+### Logging in, Viewing all shoes, specific shoe, user profile, editing, and logging out
+
+<img src='./client/public/gif-kapture-5.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+### Adding & Deleting a Shoe
+
+<img src='./client/public/gif-kapture-6.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Reflection
 

@@ -61,12 +61,11 @@ const AddShoeForm = ({ user }) => {
 
 				window.location.href = "/dashboard";
 			} else {
+				setFormSuccess(false);
 				throw new Error("Failed to add the shoe");
 			}
 		} catch (error) {
 			console.error("Error adding the shoe:", error);
-			setFormSuccess(false);
-			// Here you would handle the error, maybe setting an error state or displaying a message to the user
 		}
 	};
 
