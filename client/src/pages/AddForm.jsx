@@ -17,6 +17,11 @@ const AddShoeForm = ({ user }) => {
 	});
 	const [formSuccess, setFormSuccess] = useState(true);
 
+	const API_URL =
+		process.env.NODE_ENV === "production"
+			? "https://sneak-peak-server.up.railway.app"
+			: "http://localhost:3001";
+
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setShoe({ ...shoe, [name]: value });
@@ -34,7 +39,7 @@ const AddShoeForm = ({ user }) => {
 				body: JSON.stringify(shoe),
 			};
 
-			const response = await fetch("/api/shoes", options);
+			const response = await fetch(`${API_URL}/api/shoes`, options);
 
 			if (response.ok) {
 				const addedShoe = await response.json();

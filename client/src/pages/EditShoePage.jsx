@@ -20,6 +20,7 @@ const EditShoePage = ({ user }) => {
 		process.env.NODE_ENV === "production"
 			? "https://sneak-peak-server.up.railway.app"
 			: "http://localhost:3001";
+
 	useEffect(() => {
 		const fetchShoe = async () => {
 			const result = await fetch(`${API_URL}/api/shoes/edit/${id}`);
