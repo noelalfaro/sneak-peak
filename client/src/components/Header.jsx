@@ -5,31 +5,25 @@ import PlusCard from "./PlusCard";
 import ProfileCard from "./ProfileCard";
 
 const Header = ({ user }) => {
-	return (
-		<div className="w-full flex flex-col items-center p-4 lg:flex-row lg:justify-between">
-			<div className="w-full flex  justify-center lg:justify-start lg:w-1/2">
-				<Link
-					to={"/dashboard"}
-					className="text-current hover:text-current"
-				>
-					<h1 className="text-4xl font-bold text-center py-4">Sneak-Peak 👟</h1>
-				</Link>
-			</div>
+  return (
+    <div className="flex w-full flex-col items-center p-4 lg:flex-row lg:justify-between">
+      <div className="flex w-full  justify-center lg:w-1/2 lg:justify-start">
+        <Link to={"/dashboard"} className="text-current hover:text-current">
+          <h1 className="py-4 text-center text-4xl font-bold">Sneak-Peak 👟</h1>
+        </Link>
+      </div>
 
-			<div className="w-full flex  flex-nowrap gap-4 items-center h-full place-content-center lg:justify-end  lg:w-1/2">
-				<Link
-					to={"/add"}
-					className="text-current hover:text-current"
-				>
-					<PlusCard />
-				</Link>
+      <div className="flex h-full  w-full flex-nowrap place-content-center items-center gap-4 lg:w-1/2  lg:justify-end">
+        <Link to={"/add"} className="text-current hover:text-current">
+          <PlusCard />
+        </Link>
 
-				<ProfileCard user={user} />
+        <ProfileCard user={user} />
 
-				<GithubLogout />
-			</div>
-		</div>
-	);
+        <GithubLogout />
+      </div>
+    </div>
+  );
 };
 
 export default Header;

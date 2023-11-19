@@ -4,28 +4,25 @@ import Header from "../components/Header";
 import SneakersNotFound from "../assets/hung-sneakers.png";
 
 const PageNotFound = ({ user }) => {
-	return (
-		<>
-			<Header user={user} />
-			<div className="flex flex-col mt-20 w-full place-content-center items-center">
-				<h2 className="font-bold place-content-center text-4xl">
-					Page not found. 😕
-				</h2>
-				<img
-					className="w-1/2 m-4"
-					src={SneakersNotFound}
-					alt="hung-sneakers.png"
-				/>
+  return (
+    <>
+      <Header user={user} />
+      <div className="mt-20 flex w-full flex-col place-content-center items-center">
+        <h2 className="place-content-center text-4xl font-bold">
+          Page not found. 😕
+        </h2>
+        <img
+          className="m-4 w-1/2"
+          src={SneakersNotFound}
+          alt="hung-sneakers.png"
+        />
 
-				<Link
-					to={"/dashboard"}
-					className="text-current hover:text-current"
-				>
-					<button className="w-fit m-4">Go Back Home</button>
-				</Link>
-			</div>
-		</>
-	);
+        <Link to={"/dashboard"} className="text-current hover:text-current">
+          <button className="m-4 w-fit">Go Back Home</button>
+        </Link>
+      </div>
+    </>
+  );
 };
 
 export default PageNotFound;
