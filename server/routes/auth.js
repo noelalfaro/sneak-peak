@@ -4,41 +4,47 @@ import passport from "passport";
 const router = express.Router();
 
 router.get("/login/success", (req, res) => {
-	if (req.user) {
-		res.status(200).json({ success: true, user: req.user });
-	}
+  if (req.user) {
+    res.status(200).json({ success: true, user: req.user });
+  }
 });
 
 router.get("/login/failed", (req, res) => {
-	res.status(401).json({ success: true, message: "failure" });
+  res.status(401).json({ success: true, message: "failure" });
 });
 
 router.get("/logout", (req, res, next) => {
-	req.logout((err) => {
-		if (err) {
-			return next(err);
-		}
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
 
-		req.session.destroy((err) => {
-			res.clearCookie("connect.sid");
-			res.json({ status: "logout", user: {} });
-		});
-	});
+    req.session.destroy((err) => {
+      res.clearCookie("connect.sid");
+      res.json({ status: "logout", user: {} });
+    });
+  });
 });
 
 router.get(
-	"/github",
-	passport.authenticate("github", {
-		scope: ["read:user"],
-	})
+  "/github",
+  (req, res, next) => {
+    if (req.user) {
+      console.log("user");
+      res.redirect("/dashboard");
+    } else next();
+  },
+  passport.authenticate("github", {
+    scope: ["user:email"],
+  })
 );
 
 router.get(
-	"/github/callback",
-	passport.authenticate("github", {
-		successRedirect: "/",
-		failureRedirect: "/welcome",
-	})
+  "/github/callback",
+  passport.authenticate("github", {
+    successRedirect: "/",
+    failureRedirect: "/welcome",
+  })
 );
 
 export default router;
